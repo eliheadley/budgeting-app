@@ -1,7 +1,7 @@
 # Expense Tracker
 ## About The Project
 
-[Your project info here]
+The focus of this Java project is to track monthly spending of a user to extract trends in spending habits and hopefully illuminate areas where money could be saved.
 
 
 ## Getting Started
