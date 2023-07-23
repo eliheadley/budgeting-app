@@ -3,10 +3,13 @@ public class Date {
     private char[] date = {' ',' ','/',' ',' ','/',' ',' ',' ',' '};
 
     public Date(){
+        //Create curdate object
         long millis=System.currentTimeMillis();  
         java.sql.Date curDate = new java.sql.Date(millis);
+        //Split curDate into a char array
         char[] tempArray = curDate.toString().toCharArray();
         int dateIndex = 6;
+        //Fix formatting of curDate using for loops
         for(int i = 0; i < 4; i++){
             date[dateIndex] = tempArray[i];
             dateIndex++;
@@ -21,7 +24,9 @@ public class Date {
             date[dateIndex] = tempArray[i];
             dateIndex++;
         }
-
+    }
+    public Date(String date){
+        this.date = date.toCharArray();
     }
 
 
