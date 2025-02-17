@@ -15,7 +15,7 @@ def home():
         
         # Save data to spread sheet
 
-        return "Expense recorded successfully!"  # Replace with appropriate response or redirect
+        return "Expense recorded successfully!", 200
 
     return render_template('index.html')
 
