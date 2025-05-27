@@ -1,21 +1,21 @@
-from src.db_interface import db_manager
+from src.database.db_interface import sqlite_db
+from src.database.querries import SQLiteQuerries
 from datetime import date
 from src.models import Transaction
 
 def main():
-    args = {
-        "date": date.today(),
+    data = {
+        "date": '05-24-2025',
         "category":"Medical",
         "merchant":"Ideal Dental",
         'amount':350.00,
         'payment_method':"Credit",
         'notes':""
     }
-
-    transactions = db_manager.get_transactions()
+    transaction = Transaction(**data)
+    
+    transactions = sqlite_db.select(SQLiteQuerries.SELECT_ALL_TRANSACTIONS)
     print(transactions)
-    result = [Transaction(**dict(zip(Transaction.model_fields.keys(), data[1:]))) for data in transactions]
-    print(result)
 
 
 if __name__ == '__main__':
